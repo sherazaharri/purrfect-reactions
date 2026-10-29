@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">PurrfectReactions</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="search_fragment">Search Fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="favorite_fragment">Favorite Fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="lucky_fragment">favorite Fragment</string>
 </resources>
