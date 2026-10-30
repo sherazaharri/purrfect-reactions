@@ -1,4 +1,4 @@
-package com.example.purrfectreactions;
+package com.example.purrfectreactions.ui;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.purrfectreactions.R;
 import com.google.android.material.tabs.TabLayout;
 
 public class SearchFragment extends Fragment {
