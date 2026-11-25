@@ -13,12 +13,14 @@ import com.example.purrfectreactions.ui.FavoriteFragment;
 import com.example.purrfectreactions.ui.LuckyFragment;
 import com.example.purrfectreactions.ui.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.example.purrfectreactions.backend.Model;
 
 public class MainActivity extends AppCompatActivity {
 
     private final Fragment searchFragment = new SearchFragment();
     private final Fragment favoriteFragment = new FavoriteFragment();
     private final Fragment luckyFragment = new LuckyFragment();
+    private final Model model = new Model();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
             setCurrentFragment(searchFragment);
         }
 
+        // Initialize database + embedder on a background thread so the UI can draw immediately
+        new Thread(() -> model.initDatabase(getApplicationContext())).start();
+
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.search) {
@@ -58,4 +63,6 @@ public class MainActivity extends AppCompatActivity {
                 .replace(R.id.flFragment, fragment)
                 .commit();
     }
+
+
 }
